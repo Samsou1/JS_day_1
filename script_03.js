@@ -1,10 +1,10 @@
 let length = users.length;
 function averageGrossIncome(){
-  let grossIncome = 0
+  let grossIncome = 0;
   for(let count = 0; count < length; count++){
     grossIncome += users[count]['revenue'];
   }
-  return grossIncome / 100 / length
+  return parseInt(grossIncome / 100 / length)
 }
 
 function percentageOfPeopleWhoMadeMoney(){
@@ -14,7 +14,7 @@ function percentageOfPeopleWhoMadeMoney(){
       people +=1 ;
     }
   }
-  return people / length * 100 
+  return parseInt(people / length * 100);
 }
 
 function averageGrossIncomeAmongPeopleWhoMadeMoney(){
@@ -26,7 +26,7 @@ function averageGrossIncomeAmongPeopleWhoMadeMoney(){
       people += 1
     }
   }
-  return grossIncome / 100 / people
+  return parseInt(grossIncome / 100 / people);
 }
 
 function totalEarned(){
@@ -34,7 +34,7 @@ function totalEarned(){
   for(let count = 0; count < length; count++){
     grossIncome += users[count]['revenue'];
   }
-  return grossIncome / 100;
+  return parseInt(grossIncome / 100);
 }
 
 function numberOfUsers(country){
@@ -82,7 +82,7 @@ function incomeInFourMostRepresentedCountries(){
       hash['Great Britain'] += users[count]['revenue'];
     }
   }
-  return hash
+  return hash;
 }
 
 function incomeByPayingCountry(){
@@ -98,13 +98,13 @@ function incomeByPayingCountry(){
 }
 
 function topFiveUsers(){
- users.sort(function(a, b){return b['revenue'] - a['revenue']})
-  return [users[0], users[1], users[2], users[3], users[4]]
+  users.sort(function(a, b){return b['revenue'] - a['revenue']})
+  return [users[0], users[1], users[2], users[3], users[4]];
 }
 
 function menOrWomen(){
   let womenIncome = 0;
-  let menIncome = 0 ;
+  let menIncome = 0;
   for(let count = 0; count < length; count ++){
     if(users[count]['sex'] == 'F'){
       womenIncome += users[count]['revenue'];
@@ -113,11 +113,11 @@ function menOrWomen(){
     }
   }
   if(menIncome > womenIncome){
-    return 'Men earn more'
+    return 'Men earn more';
   }else if(womenIncome > menIncome){
-    return 'Women earn more'
+    return 'Women earn more';
   }else{
-    return 'They earn the same'
+    return 'They earn the same';
   }
 }
 
@@ -128,7 +128,7 @@ function usersWhoEarnedMoreThan(int){
       ary.push(users[count]);
     }
   }
-  return ary
+  return ary;
 }
 
 function howManyPayingUsersAmongFirst(int){
@@ -138,7 +138,7 @@ function howManyPayingUsersAmongFirst(int){
       paying += 1;
     }
   }
-  return paying
+  return paying;
 }
 
 
